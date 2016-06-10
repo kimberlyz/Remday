@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB8927971D09365A0048936E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8927961D09365A0048936E /* AppDelegate.swift */; };
-		DB8927991D09365A0048936E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8927981D09365A0048936E /* ViewController.swift */; };
+		DB8927991D09365A0048936E /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8927981D09365A0048936E /* BirthdayViewController.swift */; };
 		DB89279C1D09365A0048936E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB89279A1D09365A0048936E /* Main.storyboard */; };
 		DB89279E1D09365A0048936E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB89279D1D09365A0048936E /* Assets.xcassets */; };
 		DB8927A11D09365A0048936E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB89279F1D09365A0048936E /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		DB8927931D0936590048936E /* Remday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8927961D09365A0048936E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB8927981D09365A0048936E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB8927981D09365A0048936E /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		DB89279B1D09365A0048936E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB89279D1D09365A0048936E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB8927A01D09365A0048936E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				DB8927961D09365A0048936E /* AppDelegate.swift */,
-				DB8927981D09365A0048936E /* ViewController.swift */,
+				DB8927981D09365A0048936E /* BirthdayViewController.swift */,
 				DB89279A1D09365A0048936E /* Main.storyboard */,
 				DB89279D1D09365A0048936E /* Assets.xcassets */,
 				DB89279F1D09365A0048936E /* LaunchScreen.storyboard */,
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8927991D09365A0048936E /* ViewController.swift in Sources */,
+				DB8927991D09365A0048936E /* BirthdayViewController.swift in Sources */,
 				DB8927971D09365A0048936E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
