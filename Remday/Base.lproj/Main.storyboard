@@ -41,13 +41,13 @@
                                     <outletCollection property="gestureRecognizers" destination="Pzh-z4-GSF" appends="YES" id="uSX-uW-5In"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-0D-hyG">
-                                <rect key="frame" x="20" y="308" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-0D-hyG">
+                                <rect key="frame" x="20" y="294" width="560" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FCZ-bf-sJ3">
-                                <rect key="frame" x="20" y="346" width="560" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCZ-bf-sJ3">
+                                <rect key="frame" x="20" y="319" width="560" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,12 +82,17 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rtx-DE-m17"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameTextField" destination="L9K-0D-hyG" id="ymE-eW-gyX"/>
                         <outlet property="photoImageView" destination="RE6-4F-zKA" id="wZa-GQ-YBn"/>
                         <outlet property="picker" destination="FCZ-bf-sJ3" id="ZdF-jo-vMt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Pzh-z4-GSF"/>
+                <tapGestureRecognizer id="Pzh-z4-GSF">
+                    <connections>
+                        <action selector="selectImage:" destination="BYZ-38-t0r" id="fRk-BU-x62"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1117" y="362"/>
         </scene>
