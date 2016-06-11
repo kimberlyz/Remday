@@ -46,6 +46,16 @@ class BirthdayTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Navigation
+    @IBAction func unwindToBirthdayList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? BirthdayViewController, birthday = sourceViewController.birthday {
+            // Add a new birthday
+            let newIndexPath = NSIndexPath(forRow: birthdays.count, inSection: 0)
+            birthdays.append(birthday)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
+    
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

@@ -14,6 +14,7 @@ class BirthdayViewController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var monthPickerData: [String] = [String]()
     var dayPickerData: [String] = [String]()
@@ -24,6 +25,12 @@ class BirthdayViewController: UIViewController {
     var pickedYear: String = ""
     
     var imagePickerController: UIImagePickerController?
+    
+    /*
+     This value is either passed by `BirthdayTableViewController` in `prepareForSegue(_:sender:)`
+     or constructed as part of adding a new birthday
+     */
+    var birthday: Birthday?
     
     enum Rank: Int {
         case January = 1
@@ -39,7 +46,6 @@ class BirthdayViewController: UIViewController {
         // Connect data
         picker.delegate = self
         picker.dataSource = self
-    
         
         photoImageView.layer.cornerRadius = photoImageView.frame.size.width / 2;
         photoImageView.clipsToBounds = true;
@@ -69,6 +75,19 @@ class BirthdayViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (saveButton === sender) {
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let date = pickedMonth
+            
+            // Set the birthday to be passed to BirthdayTableViewController after the unwind segue.
+            birthday = Birthday(name: name, photo: photo, dateAsString: date)
+        }
     }
     
     // MARK: Actions
