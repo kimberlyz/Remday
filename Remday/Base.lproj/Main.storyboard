@@ -41,14 +41,14 @@
                                     <outletCollection property="gestureRecognizers" destination="Pzh-z4-GSF" appends="YES" id="uSX-uW-5In"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-0D-hyG">
-                                <rect key="frame" x="20" y="294" width="560" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCZ-bf-sJ3">
-                                <rect key="frame" x="20" y="319" width="560" height="216"/>
+                                <rect key="frame" x="20" y="325" width="560" height="216"/>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-0D-hyG">
+                                <rect key="frame" x="20" y="294" width="560" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,7 +78,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Birthday" id="BXk-rC-XW2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Paq-IG-HMg"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Paq-IG-HMg">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="DWc-xz-kcK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rtx-DE-m17">
                             <connections>
                                 <segue destination="kEb-l8-AMt" kind="unwind" unwindAction="unwindToBirthdayList:" id="BsD-Un-95b"/>
