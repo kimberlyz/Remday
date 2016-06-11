@@ -104,18 +104,18 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1929" y="362"/>
+            <point key="canvasLocation" x="1782" y="350"/>
         </scene>
         <!--Remday-->
         <scene sceneID="l22-jQ-AvX">
             <objects>
                 <tableViewController id="hHC-mo-xNB" customClass="BirthdayTableViewController" customModule="Remday" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Nx-5S-qUr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Nx-5S-qUr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirthdayTableViewCell" rowHeight="70" id="6nq-QF-xRb" customClass="BirthdayTableViewCell" customModule="Remday" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BirthdayTableViewCell" rowHeight="70" id="6nq-QF-xRb" customClass="BirthdayTableViewCell" customModule="Remday" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nq-QF-xRb" id="p4D-70-gA5">
@@ -143,6 +143,7 @@
                                     <outlet property="dateLabel" destination="3XY-SZ-V5u" id="6sz-UD-R7A"/>
                                     <outlet property="nameLabel" destination="grY-3n-sEu" id="m3m-nM-sJD"/>
                                     <outlet property="photoImageView" destination="w7t-YD-xpV" id="qFT-Yu-Pnx"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="LSq-cy-NHa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -179,7 +180,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpP-hu-s4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="350"/>
+            <point key="canvasLocation" x="1121" y="797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0FU-43-lkH">
@@ -203,4 +204,7 @@
     <resources>
         <image name="ImagePlaceholder" width="82" height="82"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LSq-cy-NHa"/>
+    </inferredMetricsTieBreakers>
 </document>

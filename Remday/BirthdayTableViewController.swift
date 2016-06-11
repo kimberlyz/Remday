@@ -28,13 +28,13 @@ class BirthdayTableViewController: UITableViewController {
     
     func loadSampleBirthdays() {
         let photo1 = UIImage(named: "meal1")
-        let birthday1 = Birthday(name: "Marshmallow", photo: photo1, dateAsString: "June 8, 2010")!
+        let birthday1 = Birthday(name: "Marshmallow", photo: photo1, month: "June", day: "8", year: "2010")!
         
         let photo2 = UIImage(named: "meal2")
-        let birthday2 = Birthday(name: "Graham", photo: photo2, dateAsString: "April 2, 1959")!
+        let birthday2 = Birthday(name: "Graham", photo: photo2, month: "April", day: "2", year: "1959")!
         
         let photo3 = UIImage(named: "meal3")
-        let birthday3 = Birthday(name: "Cracker", photo: photo3, dateAsString: "September 28, 2000")!
+        let birthday3 = Birthday(name: "Cracker", photo: photo3, month: "September", day: "28", year: "2000")!
         
         birthdays += [birthday1, birthday2, birthday3]
     }
@@ -76,7 +76,12 @@ class BirthdayTableViewController: UITableViewController {
         
         cell.nameLabel.text = birthday.name
         cell.photoImageView.image = birthday.photo
-        cell.dateLabel.text = birthday.dateAsString
+        if (birthday.year.isEmpty) {
+            cell.dateLabel.text = "\(birthday.month) \(birthday.day)"
+        } else {
+            cell.dateLabel.text = "\(birthday.month) \(birthday.day), \(birthday.year)"
+        }
+        //cell.dateLabel.text = birthday.dateAsString
 
         return cell
     }
@@ -117,15 +122,28 @@ class BirthdayTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "ShowDetail") {
+            let birthdayDetailViewController = segue.destinationViewController as! BirthdayViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedBirthdayCell = sender as? BirthdayTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedBirthdayCell)!
+                let selectedBirthday = birthdays[indexPath.row]
+                birthdayDetailViewController.birthday = selectedBirthday
+            }
+        } else if (segue.identifier == "AddBirthday") {
+            print("Adding new Birthday")
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 

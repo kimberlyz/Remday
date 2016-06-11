@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Remday/BirthdayViewController.swift"
-            timestampString = "487319273.627567"
+            timestampString = "487372980.047265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "BirthdayViewController"
             landmarkType = "3">
          </BreakpointContent>

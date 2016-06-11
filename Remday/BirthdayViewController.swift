@@ -25,6 +25,7 @@ class BirthdayViewController: UIViewController {
     var pickedYear: String = ""
     
     var imagePickerController: UIImagePickerController?
+    var monthDict: [String: Int] = ["January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7, "August": 8, "September": 9, "October": 10, "November": 11, "December": 12]
     
     /*
      This value is either passed by `BirthdayTableViewController` in `prepareForSegue(_:sender:)`
@@ -32,7 +33,7 @@ class BirthdayViewController: UIViewController {
      */
     var birthday: Birthday?
     
-    enum Rank: Int {
+    enum Month: Int {
         case January = 1
         case February, March, April, May, June, July, August, September, October, November, December
         func simpleDescription() -> String {
@@ -46,14 +47,45 @@ class BirthdayViewController: UIViewController {
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
         
-        // Enable the Save button only if the text field has a valid Meal name.
-        checkValidBirthdayName()
-        
         // Connect data
         picker.delegate = self
         picker.dataSource = self
         
+        loadPickerData()
+        checkAndLoadExistingMeal()
+
         
+
+        // Enable the Save button only if the text field has a valid Meal name.
+        checkValidBirthdayName()
+    
+        makeImageBorderedAndCircular()
+
+        
+
+    }
+    
+    func checkAndLoadExistingMeal() {
+        // Set up views if editing an existing Meal.
+        if let birthday = birthday {
+            navigationItem.title = birthday.name
+            nameTextField.text = birthday.name
+            photoImageView.image = birthday.photo
+            pickedMonth = birthday.month
+            pickedDay = birthday.day
+            pickedYear = birthday.year
+            
+            picker.selectRow(monthDict[pickedMonth]! - 1, inComponent: 0, animated: false)
+            picker.selectRow(Int(pickedDay)! - 1, inComponent: 1, animated: false)
+            
+            if (pickedYear.isEmpty) {
+                picker.selectRow(0, inComponent: 2, animated: false)
+            } else {
+                picker.selectRow(2016 - Int(pickedYear)! + 1, inComponent: 2, animated: false)
+            }
+        }
+    }
+    func makeImageBorderedAndCircular() {
         // Display image as a circle
         photoImageView.layer.cornerRadius = photoImageView.frame.size.width / 2;
         photoImageView.clipsToBounds = true;
@@ -61,8 +93,6 @@ class BirthdayViewController: UIViewController {
         // Create white border around image
         photoImageView.layer.borderWidth = 3.5
         photoImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        
-        loadPickerData()
     }
     
     func loadPickerData() {
@@ -97,10 +127,10 @@ class BirthdayViewController: UIViewController {
         if (saveButton === sender) {
             let name = nameTextField.text ?? ""
             let photo = photoImageView.image
-            let date = pickedMonth
+            //let date = pickedMonth
             
             // Set the birthday to be passed to BirthdayTableViewController after the unwind segue.
-            birthday = Birthday(name: name, photo: photo, dateAsString: date)
+            birthday = Birthday(name: name, photo: photo, month: pickedMonth, day: pickedDay, year: pickedYear)
         }
     }
     
