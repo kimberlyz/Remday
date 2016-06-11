@@ -19,7 +19,19 @@ class BirthdayViewController: UIViewController {
     var dayPickerData: [String] = [String]()
     var yearPickerData: [String] = [String]()
     
+    var pickedMonth: String = "January"
+    var pickedDay: String = "1"
+    var pickedYear: String = ""
+    
     var imagePickerController: UIImagePickerController?
+    
+    enum Rank: Int {
+        case January = 1
+        case February, March, April, May, June, July, August, September, October, November, December
+        func simpleDescription() -> String {
+            return String(self.rawValue)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,6 +158,17 @@ extension BirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return dayPickerData[row]
         } else {
             return yearPickerData[row]
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        if (component == 0) {
+            pickedMonth = monthPickerData[row]
+        } else if (component == 1) {
+            pickedDay = dayPickerData[row]
+        } else {
+            pickedYear = yearPickerData[row]
         }
     }
 }

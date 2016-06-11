@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB6D00BE1D0B8BC5000AFF03 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D00BD1D0B8BC5000AFF03 /* Birthday.swift */; };
+		DB6D00BF1D0B8BC5000AFF03 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D00BD1D0B8BC5000AFF03 /* Birthday.swift */; };
+		DB6D00C11D0BCEF5000AFF03 /* BirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D00C01D0BCEF5000AFF03 /* BirthdayTableViewCell.swift */; };
+		DB6D00C31D0BD6C2000AFF03 /* BirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6D00C21D0BD6C2000AFF03 /* BirthdayTableViewController.swift */; };
 		DB8927971D09365A0048936E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8927961D09365A0048936E /* AppDelegate.swift */; };
 		DB8927991D09365A0048936E /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8927981D09365A0048936E /* BirthdayViewController.swift */; };
 		DB89279C1D09365A0048936E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB89279A1D09365A0048936E /* Main.storyboard */; };
@@ -26,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB6D00BD1D0B8BC5000AFF03 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		DB6D00C01D0BCEF5000AFF03 /* BirthdayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewCell.swift; sourceTree = "<group>"; };
+		DB6D00C21D0BD6C2000AFF03 /* BirthdayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewController.swift; sourceTree = "<group>"; };
 		DB8927931D0936590048936E /* Remday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8927961D09365A0048936E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB8927981D09365A0048936E /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +87,9 @@
 				DB8927961D09365A0048936E /* AppDelegate.swift */,
 				DB8927981D09365A0048936E /* BirthdayViewController.swift */,
 				DB89279A1D09365A0048936E /* Main.storyboard */,
+				DB6D00C21D0BD6C2000AFF03 /* BirthdayTableViewController.swift */,
+				DB6D00C01D0BCEF5000AFF03 /* BirthdayTableViewCell.swift */,
+				DB6D00BD1D0B8BC5000AFF03 /* Birthday.swift */,
 				DB89279D1D09365A0048936E /* Assets.xcassets */,
 				DB89279F1D09365A0048936E /* LaunchScreen.storyboard */,
 				DB8927A21D09365A0048936E /* Info.plist */,
@@ -197,8 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6D00C11D0BCEF5000AFF03 /* BirthdayTableViewCell.swift in Sources */,
 				DB8927991D09365A0048936E /* BirthdayViewController.swift in Sources */,
 				DB8927971D09365A0048936E /* AppDelegate.swift in Sources */,
+				DB6D00BE1D0B8BC5000AFF03 /* Birthday.swift in Sources */,
+				DB6D00C31D0BD6C2000AFF03 /* BirthdayTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6D00BF1D0B8BC5000AFF03 /* Birthday.swift in Sources */,
 				DB8927AC1D09365A0048936E /* RemdayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +404,7 @@
 				DB8927B21D09365A0048936E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB8927B31D09365A0048936E /* Build configuration list for PBXNativeTarget "RemdayTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +413,7 @@
 				DB8927B51D09365A0048936E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
