@@ -49,11 +49,18 @@ class BirthdayTableViewController: UITableViewController {
     // MARK: Navigation
     @IBAction func unwindToBirthdayList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? BirthdayViewController, birthday = sourceViewController.birthday {
-            // Add a new birthday
-            let newIndexPath = NSIndexPath(forRow: birthdays.count, inSection: 0)
-            birthdays.append(birthday)
-            birthdays.sortInPlace { $0.name.lowercaseString < $1.name.lowercaseString }
-            tableView.reloadData()
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing birthday
+                birthdays[selectedIndexPath.row] = birthday
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            } else {
+                // Add a new birthday
+                //let newIndexPath = NSIndexPath(forRow: birthdays.count, inSection: 0)
+                birthdays.append(birthday)
+                birthdays.sortInPlace { $0.name.lowercaseString < $1.name.lowercaseString }
+                tableView.reloadData()
+            }
             //tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
     }

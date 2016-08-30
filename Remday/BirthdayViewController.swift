@@ -52,21 +52,16 @@ class BirthdayViewController: UIViewController {
         picker.dataSource = self
         
         loadPickerData()
-        checkAndLoadExistingMeal()
-
-        
+        checkAndLoadExistingBirthday()
 
         // Enable the Save button only if the text field has a valid Meal name.
         checkValidBirthdayName()
-    
+
         makeImageBorderedAndCircular()
-
-        
-
     }
     
-    func checkAndLoadExistingMeal() {
-        // Set up views if editing an existing Meal.
+    func checkAndLoadExistingBirthday() {
+        // Set up views if editing an existing Birthday.
         if let birthday = birthday {
             navigationItem.title = birthday.name
             nameTextField.text = birthday.name
@@ -117,9 +112,14 @@ class BirthdayViewController: UIViewController {
     }
     
     // MARK: Navigation
-    
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddBirthdayMode = presentingViewController is UINavigationController
+        if isPresentingInAddBirthdayMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     // This method lets you configure a view controller before it's presented.
@@ -277,7 +277,5 @@ extension BirthdayViewController: UITextFieldDelegate {
         let text = nameTextField.text ?? ""
         saveButton.enabled = !text.isEmpty
     }
-    
-
 }
 
