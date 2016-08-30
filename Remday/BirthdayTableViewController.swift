@@ -112,7 +112,6 @@ class BirthdayTableViewController: UITableViewController {
         }
     }
     
-
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

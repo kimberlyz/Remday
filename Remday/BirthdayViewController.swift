@@ -166,11 +166,11 @@ extension BirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Width of each column of data
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         if (component == 0) {
-            return self.view.frame.size.width * 0.4
+            return self.view.frame.size.width * 0.3
         } else if (component == 1) {
             return self.view.frame.size.width * 0.2
         } else {
-            return self.view.frame.size.width * 0.25
+            return self.view.frame.size.width * 0.3
         }
     }
     
@@ -195,6 +195,32 @@ extension BirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             pickedYear = yearPickerData[row]
         }
+    }
+    
+    // Make text in picker all left-aligned
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        var pickerLabel = view as! UILabel!
+        
+        if view == nil {  //if no label there yet
+            pickerLabel = UILabel()
+        }
+        
+        var title = ""
+        if (component == 0) {
+            title = monthPickerData[row]
+            pickerLabel!.textAlignment = .Left
+        } else if (component == 1) {
+            title = dayPickerData[row]
+            pickerLabel!.textAlignment = .Center
+        } else {
+            title = yearPickerData[row]
+            pickerLabel!.textAlignment = .Right
+        }
+//        let titleData = pickerData[row]
+//        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
+//        pickerLabel!.attributedText = myTitle
+        pickerLabel!.text = title
+        return pickerLabel
     }
 }
 
